@@ -71,5 +71,5 @@ app.post("/contact", uncoder, (req, res) => {
 app.get("/about", (req, res) => {
     res.render("About")
 })
-var Port=process.env.Port|8000
+var Port=process.env.Port||8000
 app.listen(Port, () => console.log(`server is running at port ${Port}`))
