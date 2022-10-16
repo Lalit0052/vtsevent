@@ -1,0 +1,68 @@
+{{>header}}
+<title>Evant Planner || Contact</title>
+{{>navbar}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-12">
+            <div class="list bg-info text-light mt-1 mb-1 fs-4">
+                <ul>
+                    <li><strong>Gmail ID</strong> - Panditlalitvats@gmail.com</li>
+                    <li><strong>Phone No</strong> - 9540948021</li>
+                    <li><strong>Address</strong> - Haibatpur Sec4 Near Gaur City Mall Greater Noida</li>
+
+                </ul>
+            </div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=haibatpur sec 4 near gaur city mall&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    </iframe>
+                </div>
+                <style>
+                    .gmap_iframe {
+                        width: 98% !important;
+                        height: 400px !important;
+                    }
+                </style>
+            </div>
+        </div>
+        <div class="col-sm-6 col-12">
+            <h3 class="bg-info text-light text-center mt-1">Contact us</h3>
+            {{#if show}}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Thanks!</strong> To Share Query With Us|| Our Team Will Contact As Soon As Possible  
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+            <form method="post" action="/contact">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="taxt" name="name" class="form-control" placeholder="Enter Your Full Name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Full Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="Enter Your Full Address"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone No</label>
+                    <input type="number" name="phoneno" class="form-control" placeholder="Enter Your Phone Number"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" name="gmail" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@gmail.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Massage</label>
+                    <textarea name="massege" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn bg-primary text-light w-100 link-dark ">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{>footer}}

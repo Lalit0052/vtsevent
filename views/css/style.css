@@ -1,0 +1,17 @@
+.pic{
+    height: 600px;
+}
+.home1,.home2{
+    display: flex;
+    justify-content: space-between;
+}
+.home1 img,.home2 img{
+    width: 40%;
+    height: 400px;
+}
+.home1 p,.home2 p{
+    width: 58%;
+}
+.home2{
+    flex-direction: row-reverse;
+}
