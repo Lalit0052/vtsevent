@@ -4,7 +4,7 @@ const app = express()
 const path = require("path")
 const bodyParser = require("body-parser")
 const nodemailer = require("nodemailer")
-const dotenv=require("dotenv")
+const dotenv = require("dotenv")
 dotenv.config()
 
 const transpoter = nodemailer.createTransport({
@@ -34,7 +34,7 @@ app.get("/contact", (req, res) => {
     res.render("Contact")
 })
 app.post("/contact", uncoder, (req, res) => {
-   
+
     let mailOption = {
         from: process.env.MAILSENDER,
         to: req.body.gmail,
@@ -42,15 +42,15 @@ app.post("/contact", uncoder, (req, res) => {
         text: "Thanks To Share Query With Us || Our Team Will Contact You As Soon As possible "
     }
     transpoter.sendMail(mailOption, (error, data) => {
-        if(error)
-        console.log(error);
+        if (error)
+            console.log(error);
     })
     mailOption = {
         from: process.env.MAILSENDER,
-        to:process.env.MAILSENDER,
+        to: process.env.MAILSENDER,
         subject: "One New Query Received || ",
         text:
-        ` One New Query Received From Client ,
+            ` One New Query Received From Client ,
         Name       :${req.body.name}
         Address    :${req.body.address}
         Phone No   :${req.body.phoneno}
@@ -60,8 +60,8 @@ app.post("/contact", uncoder, (req, res) => {
         `
     }
     transpoter.sendMail(mailOption, (error, data) => {
-        if(error)
-        console.log(error);
+        if (error)
+            console.log(error);
     })
     res.render("Contact")
 
@@ -71,5 +71,5 @@ app.post("/contact", uncoder, (req, res) => {
 app.get("/about", (req, res) => {
     res.render("About")
 })
-var Port=process.env.Port||8000
+var Port = process.env.Port || 8000
 app.listen(Port, () => console.log(`server is running at port ${Port}`))
